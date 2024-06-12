@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const chokidar = require('chokidar');
 const { exec } = require('child_process');
 
 const themesDir = path.join(__dirname, 'src/themes');
@@ -46,8 +47,8 @@ const compileAllThemes = () => {
 };
 
 // Watch for changes and recompile
-const watchAndCompile = () => {
-  const chokidar = require('chokidar');
+const watchSassFiles = () => {
+  console.log('Watching Sass files:', `${themesDir}/**/*.scss`);
   const watcher = chokidar.watch(`${themesDir}/**/*.scss`, { persistent: true });
   watcher.on('change', (filePath) => {
     console.log(`File changed: ${filePath}`);
@@ -57,7 +58,7 @@ const watchAndCompile = () => {
 
 // Determine if we are watching or just compiling
 if (process.argv.includes('--watch')) {
-  watchAndCompile();
+  watchSassFiles();
 } else {
   compileAllThemes();
 }
