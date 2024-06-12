@@ -1,0 +1,11 @@
+:root {
+    --bg-color: #202020;
+    --font-color: #ededed;
+    --accent-color: #eabd37;
+    --btn-color: var(--bg-color);
+}
+
+button {
+    border: 8px solid red;
+    font-size: 3rem;
+}

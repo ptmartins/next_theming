@@ -1,0 +1,10 @@
+:root {
+    --bg-color: #99c1b9;
+    --font-color: #3d3935;
+    --accent-color: #8e7dbe;
+    --btn-color: var(--font-color);
+}
+
+button {
+    font-size: 2rem ;
+}
